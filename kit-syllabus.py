@@ -19,9 +19,12 @@ for i in range(1,pages_to_find+1):
 # print(pages)
 
 for url in pages:
-    response = r.get(url).text
-    soup = BeautifulSoup(response,'lxml')
-    print(r.get(url))
+    try:
+        response = r.get(url).text
+        soup = BeautifulSoup(response,'lxml')
+        print(r.get(url))
+    except:
+        print("Page cannot be found. Try again.")
 
 
     # COURSE TITLE
