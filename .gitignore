@@ -1,0 +1,21 @@
+# Virtual Environment
+myenv
+
+#Environment variables
+.env
+
+#Jupyter Notebooks
+*.ipynb
+
+# Others
+*.txt
+*.png
+*.jpg
+*.ico
+*.gif
+*.csv
+01_kitSyllabus\*.txt
+*.txt
+__pycache__
+.vscode
+test.*
