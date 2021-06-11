@@ -2,11 +2,10 @@ import util as u
 
 class Calculator:
     def get_input(self):
-        while True:
-            num_1 = input('Enter num_1 : ').strip()
-            num_2 = input('Enter num_2 : ').strip()
-            operator = input('Input a math operator  :  ').strip()
-            return num_1,num_2,operator
+        num_1 = input('Enter num_1 : ').strip()
+        num_2 = input('Enter num_2 : ').strip()
+        operator = input('Input a math operator  :  ').strip()
+        return num_1,num_2,operator
 
     def calculate(self,num_1,num_2,operator):
         if operator == 'add' or operator == '+':
@@ -21,6 +20,15 @@ class Calculator:
             print('INVALID INPUT')
         print('#-----------------------#')
 
+    def repeat(self):
+        again = input("Calculate again ?  (y/n) \n").lower()
+        if again == 'y':
+            return True
+        elif again == 'n':
+            print('Bye ! See you later.')
+            return False
+        return again
+        
     def main(self):
         print('''
 ************************BASIC CALCULATOR****************************************
@@ -31,15 +39,11 @@ class Calculator:
 |   divide   :  /                                                              |
 ********************************************************************************
 ''')
-        while True:
+        again = True
+        while again == True:
             num_1,num_2,operator = self.get_input()
             self.calculate(num_1,num_2,operator)
-            again =input("Calculate again ?  (y/n) \n").lower()
-            if again == 'n':
-                print('Bye ! See you later.')
-                break
-            elif again == 'y':
-                self.main()
+            again = self.repeat()
 
 if __name__ == '__main__':
     result = Calculator()
