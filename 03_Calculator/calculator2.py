@@ -2,12 +2,14 @@ import util as u
 
 class Calculator:
     def get_input(self):
+        '''Get input from user'''
         num_1 = input('Enter num_1 : ').strip()
         num_2 = input('Enter num_2 : ').strip()
         operator = input('Input a math operator  :  ').strip()
         return num_1,num_2,operator
 
     def calculate(self,num_1,num_2,operator):
+        '''Perform calculations using the imported module 'util'''
         if operator == 'add' or operator == '+':
             print(f'{num_1} + {num_2} = ',u.add(num_1,num_2))
         elif operator == 'subtract' or operator == '-':
@@ -21,6 +23,7 @@ class Calculator:
         print('#-----------------------#')
 
     def repeat(self):
+        '''Prompt user to calculate again or not. Break loop if again = False. (default is True)'''
         again = input("Calculate again ?  (y/n) \n").lower()
         if again == 'y':
             return True
@@ -28,8 +31,9 @@ class Calculator:
             print('Bye ! See you later.')
             return False
         return again
-        
+    
     def main(self):
+        '''Main function to excute all the methods of Calculator class'''
         print('''
 ************************BASIC CALCULATOR****************************************
 |   Press 'q' to quit or press 'c' to reset number before input the operator.  | 
