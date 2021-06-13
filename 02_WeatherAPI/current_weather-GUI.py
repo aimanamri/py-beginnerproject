@@ -2,9 +2,12 @@ import requests
 from datetime import datetime
 from tkinter import *
 from tkinter import messagebox
-# import os  #store API key in system env 
+# import os  # API key stored in .env file
+from dotenv import load_dotenv
+import os
 
-API_key = '<------>' #put API key here
+load_dotenv()
+API_key = os.getenv('API_KEY')
 
 def get_weather(city):
     url = 'http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + API_key
