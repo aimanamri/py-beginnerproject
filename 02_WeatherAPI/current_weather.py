@@ -1,8 +1,11 @@
 import requests
 from datetime import datetime
-# import os  #store API key in system env 
+# import os  # API key stored in .env file
+from dotenv import load_dotenv
+import os
 
-API_key = '<------>' #put API key here
+load_dotenv()
+API_key = os.getenv('API_KEY')
 
 location = input("Enter the city name :  ")
 url = 'http://api.openweathermap.org/data/2.5/weather?q=' + location + '&appid=' + str(API_key)
